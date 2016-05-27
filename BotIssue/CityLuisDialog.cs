@@ -71,7 +71,9 @@ namespace BotIssue
         public static IForm<CityForm> BuildForm()
         {
             string Airports = "Aberdeen; Aberdeen Airport Belfast; Belfast International Airport Aldergrove Belfast; George Best Belfast City Airport Birmingham; Birmingham International Airport Blackpool; Blackpool Airport Bristol; Bristol Airport Cardiff; Cardiff International Airport Derby; East Midlands Apt Doncaster; Robin Hood Airport Durham; Durham Tees Valley Airport Edinburgh; Edinburgh Airport Exeter; Exeter Airport Glasgow; Glasgow International Airport Gloucester; Staverton Airport Humberside; Humberside Airport Inverness; Inverness Airport Jersey; Jersey Airport (Meet&Greet) Leeds Bradford Airport; (Meet & Greet) Liverpool; Liverpool Airport London; Gatwick Airport North Terminal London; Gatwick Airport South Terminal London; London Heathrow Airport, T1,T2,T3,T4 London; London Heathrow Airport, T5 London; London City Airport London; London Luton Airport London; London Stansted Airport Manchester; Manchester Airport Newcastle; Newcastle Airport Newquay; Newquay Airport Norwich; Norwich Airport Prestwick; Prestwick Airport Southampton; Southampton International Airport";
-
+            //This Causes issue
+            //(Meet & Greet) Liverpool
+            //string Airports = "Liverpool Airport London; (Meet & Greet) Liverpool; Gatwick Airport North Terminal London"; //WTF
             return new FormBuilder<CityForm>()
                 .Field(new FieldReflector<CityForm>(nameof(Location))
                     .SetType(null)
